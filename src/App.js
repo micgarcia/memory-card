@@ -7,9 +7,9 @@ function App() {
       <div id='header'>
         <h1>The Office Memory Card Game</h1>
       </div>
-      <div id="gameCont">
-        <GameContainer />
-      </div>
+
+      <GameContainer />
+
     </div>
   )
 }

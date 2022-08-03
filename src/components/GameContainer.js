@@ -3,8 +3,13 @@ import Dwight from './Dwight';
 import PlaceCard from './PlaceCard';
 
 const GameContainer = () => {
+  const [counter, setCounter] = useState(0);
   const [score, setScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
   const [charArray, setCharArray] = useState([]);
+  const [clicked, setClicked] = useState([]);
+
+  /*
   const [characters, setCharacters] = useState({
     Dwight: {
       placed: false,
@@ -55,55 +60,78 @@ const GameContainer = () => {
       clicked: false,
     }
   });
+  */
 
 
+  let choices = ['Dwight', 'Michael', 'Jim', 'Pam', 'Robert',
+       'Angela', 'Erin', 'Kevin', 'Gabe', 'Toby', 'Stanley', 'Ryan'];
+
+  const shuffleList = () => {
+    setCharArray(choices.sort(() => Math.random() - 0.5).slice(0, 12));
+  }
+
+  const changeScore = (status) => {
+    if (status === 0) {
+      setScore(0);
+      if (score > highScore) {
+        setHighScore(score);
+      }
+      setClicked([]);
+    } else if (status === 1) {
+      setScore(score + 1);
+    }
+  };
+
+  const changeCounter = (e) => {
+    setCounter(counter + 1);
+    if (clicked.includes(e.target.innerText)) {
+      changeScore(0);
+    } else {
+      changeScore(1);
+      setClicked(clicked => [...clicked, e.target.innerText]);
+    }
+
+  }
 
   useEffect(() => {
-    const chooseIndex = () => {
+    shuffleList();
+  },[counter])
 
-      let choices = ['Dwight', 'Michael', 'Jim', 'Pam', 'Robert',
-       'Angela', 'Erin', 'Kevin', 'Gabe', 'Toby', 'Stanley', 'Ryan'];
-      let chosenIndex = Math.floor(Math.random() * choices.length);
-      let chosenOne = choices[chosenIndex];
-      if (!charArray.includes(chosenOne)) {
-        setCharArray( charArray => ([
-          ...charArray,
-          chosenOne
-        ]))
-        charArray.push(chosenOne);
-      }
-    }
+  useEffect(() => {
+    console.log(clicked);
 
-    while(charArray.length < 12) {
-      chooseIndex();
-    }
-    console.log(charArray);
+  },[clicked])
 
+  useEffect(() => {
+    console.log('score: ' + score);
+  }, [score])
 
-  })
+  useEffect(() => {
 
-  const changeScore = () => {
-    setCharArray([]);
-    setScore(1);
-  }
-  document.addEventListener('click', changeScore);
+  }, [highScore])
 
+  // When clicked, setCharacters to change click prop. Check if clicked before that,
+  //  if not clicked, then add one to score. Otherwise set score to 0.
 
   return (
 
-    <div className="cardCont">
-      <div className="card">{charArray[0]}</div>
-      <div className="card">{charArray[1]}</div>
-      <div className="card">{charArray[2]}</div>
-      <div className="card">{charArray[3]}</div>
-      <div className="card">{charArray[4]}</div>
-      <div className="card">{charArray[5]}</div>
-      <div className="card">{charArray[6]}</div>
-      <div className="card">{charArray[7]}</div>
-      <div className="card">{charArray[8]}</div>
-      <div className="card">{charArray[9]}</div>
-      <div className="card">{charArray[10]}</div>
-      <div className="card">{charArray[11]}</div>
+    <div id="gameCont">
+      <div id="scoreBoard">Score: {score}</div>
+      <div id="highScore">High Score: {highScore}</div>
+      <div className="cardCont">
+        <div className="card" onClick={changeCounter}>{charArray[0]}</div>
+        <div className="card" onClick={changeCounter}>{charArray[1]}</div>
+        <div className="card" onClick={changeCounter}>{charArray[2]}</div>
+        <div className="card" onClick={changeCounter}>{charArray[3]}</div>
+        <div className="card" onClick={changeCounter}>{charArray[4]}</div>
+        <div className="card" onClick={changeCounter}>{charArray[5]}</div>
+        <div className="card" onClick={changeCounter}>{charArray[6]}</div>
+        <div className="card" onClick={changeCounter}>{charArray[7]}</div>
+        <div className="card" onClick={changeCounter}>{charArray[8]}</div>
+        <div className="card" onClick={changeCounter}>{charArray[9]}</div>
+        <div className="card" onClick={changeCounter}>{charArray[10]}</div>
+        <div className="card" onClick={changeCounter}>{charArray[11]}</div>
+      </div>
     </div>
   )
 
