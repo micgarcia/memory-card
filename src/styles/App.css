@@ -179,8 +179,8 @@ b {
 .charContainer {
   display: grid;
   justify-items: center;
-
-  background-color: #38A3A5;
+  background-image: linear-gradient( #38A3A5 90%, #297778);
+  /*background-color: #38A3A5;*/
   padding: 0.5em 0.5em 1.5em 0.5em;
   border-radius: 7px;
 
