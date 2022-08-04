@@ -1,5 +1,6 @@
 {
   "name": "memory-card",
+  "homepage": "https://github.com/micgarcia/memory-card",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -40,6 +41,6 @@
   "devDependencies": {
     "gh-pages": "^4.0.0"
 
-  },
-  "homepage": "https://github.com/micgarcia/memory-card"
+  }
+
 }

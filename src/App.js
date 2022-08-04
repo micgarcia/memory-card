@@ -1,5 +1,5 @@
-import GameContainer from '/memory-card/src/components/GameContainer';
-import '/memory-card/styles/App.css';
+import GameContainer from './components/GameContainer';
+import './styles/App.css';
 
 function App() {
 
