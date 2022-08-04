@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import '../styles/App.css'
+import 'memory-card/styles/App.css'
 
 const PlaceCard = ({names, position}) => {
   const info = {
