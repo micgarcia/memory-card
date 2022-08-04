@@ -127,6 +127,7 @@ body, #root {
 }
 
 img {
-  height: 50%;
-  width: 50%;
+  object-fit: cover;
+  height: 170px;
+  width: 300px;
 }
