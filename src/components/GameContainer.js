@@ -46,12 +46,10 @@ const GameContainer = () => {
   },[counter])
 
   useEffect(() => {
-    console.log(clicked);
 
   },[clicked])
 
   useEffect(() => {
-    console.log('score: ' + score);
   }, [score])
 
   useEffect(() => {

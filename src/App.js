@@ -6,7 +6,7 @@ function App() {
   return(
     <div id='App'>
       <div id='header'>
-        <h1>The Office Memory Card Game</h1>
+        <h1><b>The Office</b> Memory Card Game</h1>
         <h2>Get points by clicking on an image but don't click on any more than once!</h2>
       </div>
 

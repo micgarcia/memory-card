@@ -50,11 +50,19 @@ table {
 */
 
 html {
-  height: 100vh;
+  height: 100%;
 }
 
-body, #root {
+body {
   height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 /*
@@ -63,18 +71,25 @@ body, #root {
   ===============
 */
 
+@font-face {
+  font-family: "office";
+  src: local("American Typewriter Regular"),
+    url("../fonts/AmericanTypewriterRegular.ttf") format("truetype");
+}
+
 #App {
   height: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: 150px 1fr;
+
+  background-color: #22577A;
+  overflow-x: hidden;
+
+  font-family: 'office';
 }
 
-#header {
-  display: grid;
-  grid-template-rows: 2fr 1fr;
-  align-items: center;
-}
+
 
 /*
   ===============
@@ -82,12 +97,32 @@ body, #root {
   ===============
 */
 
+#header {
+
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  align-items: center;
+  background-image: linear-gradient(black, #22577A);
+
+}
+
 #header > h1 {
-  font-size: 38px;
+  font-size: 40px;
+  padding-left: 20px;
+  padding-top: 20px;
+  color: #57CC99;
+}
+
+b {
+  font-size: 55px;
+  padding-right: 10px;
 }
 
 #header > h2 {
   font-size: 18px;
+  padding-left: 20px;
+  padding-top: 20px;
+  color: #57CC99;
 }
 
 /*
@@ -97,16 +132,26 @@ body, #root {
 */
 
 #gameCont {
+  min-height: 100%;
   display: grid;
   grid-template-rows: 50px 1fr;
+
 }
 
 #scoreCont {
   display: grid;
   width: 50%;
-  grid-template-columns: 130px 130px;
+  grid-template-columns: 130px 175px;
   align-self: center;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: bold;
+
+  padding-left: 20px;
+  padding-top: 50px;
+  color: #57CC99;
+  z-index: 0;
+
+  transition: opacity 0.5s ease-out;
 }
 
 /*
@@ -116,18 +161,47 @@ body, #root {
 */
 
 .cardCont {
+  height: 150%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+  justify-items: center;
+  align-items: center;
+  column-gap: 3em;
+  background-color: #22577A;
+  width: 95%;
+  justify-self: center;
+  padding-left: 36px;
+  padding-right: 36px;
 
 }
 
 .charContainer {
+  display: grid;
+  justify-items: center;
 
+  background-color: #38A3A5;
+  padding: 0.5em 0.5em 1.5em 0.5em;
+  border-radius: 7px;
+
+  transition: box-shadow 0.2s ease-out;
+}
+
+.charContainer:hover {
+  box-shadow: 0 0 10px 5px #80ED99;
+}
+
+.charContainer > div {
+  grid-row: 2 / 3;
+  padding-top: 1em;
+  font-size: 22px;
+  font-weight: bold;
+  color: #80ED99;
 }
 
 img {
   object-fit: cover;
   height: 170px;
   width: 300px;
+  border-radius: 7px;
 }
