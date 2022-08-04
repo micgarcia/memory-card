@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2bc9bf9f.css",
+    "main.js": "/static/js/main.2e27089d.js",
+    "static/media/AmericanTypewriterRegular.ttf": "/static/media/AmericanTypewriterRegular.5070e3975638666109d3.ttf",
+    "index.html": "/index.html",
+    "main.2bc9bf9f.css.map": "/static/css/main.2bc9bf9f.css.map",
+    "main.2e27089d.js.map": "/static/js/main.2e27089d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2bc9bf9f.css",
+    "static/js/main.2e27089d.js"
+  ]
+}
