@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import '../styles/App.css'
 
 const PlaceCard = ({names, position}) => {
   const info = {
@@ -44,7 +45,7 @@ const PlaceCard = ({names, position}) => {
     },
     Stanley: {
       fullName: 'Stanley Hudson',
-      picture: ''
+      picture: 'https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/streams/2012/June/120627/434210-120627-ent-bjnovak-vmed.jpg'
     },
     Ryan: {
       fullName: 'Ryan Howard',
@@ -64,11 +65,11 @@ const PlaceCard = ({names, position}) => {
 
 
   return (
-    <div id="charContainer">
+    <div className="charContainer">
       <div id={currentName}>
         {currentName}
       </div>
-      {/*<img src={currentPic} alt="" id={currentName}/>*/}
+      <img src={currentPic} alt="" id={currentName}/>
 
     </div>
   )

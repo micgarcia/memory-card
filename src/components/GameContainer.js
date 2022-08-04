@@ -1,5 +1,6 @@
 import React, {useState, useEffect } from 'react';
 import PlaceCard from './PlaceCard';
+import '../styles/App.css';
 
 const GameContainer = () => {
   const [counter, setCounter] = useState(0);
@@ -63,8 +64,10 @@ const GameContainer = () => {
   return (
 
     <div id="gameCont">
-      <div id="scoreBoard">Score: {score}</div>
-      <div id="highScore">High Score: {highScore}</div>
+      <div id="scoreCont">
+        <div id="scoreBoard">Score: {score}</div>
+        <div id="highScore">High Score: {highScore}</div>
+      </div>
       <div className="cardCont">
         <div className="card" onClick={changeCounter}>{<PlaceCard names={charArray} position={0}/>}</div>
         <div className="card" onClick={changeCounter}>{<PlaceCard names={charArray} position={1}/>}</div>
