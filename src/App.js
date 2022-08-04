@@ -7,7 +7,7 @@ function App() {
     <div id='App'>
       <div id='header'>
         <h1><b>The Office</b> Memory Card Game</h1>
-        <h2>Get points by clicking on an image but don't click on any more than once!</h2>
+        <h2>Try to click on all the characters without clicking on one more than once!</h2>
       </div>
 
       <GameContainer />

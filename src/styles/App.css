@@ -189,6 +189,7 @@ b {
 
 .charContainer:hover {
   box-shadow: 0 0 10px 5px #80ED99;
+  cursor: pointer;
 }
 
 .charContainer > div {
