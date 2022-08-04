@@ -1,5 +1,4 @@
 import React, {useState, useEffect } from 'react';
-import Dwight from './Dwight';
 import PlaceCard from './PlaceCard';
 
 const GameContainer = () => {
@@ -8,59 +7,6 @@ const GameContainer = () => {
   const [highScore, setHighScore] = useState(0);
   const [charArray, setCharArray] = useState([]);
   const [clicked, setClicked] = useState([]);
-
-  /*
-  const [characters, setCharacters] = useState({
-    Dwight: {
-      placed: false,
-      clicked: false,
-    },
-    Michael: {
-      placed: false,
-      clicked: false,
-    },
-    Jim: {
-      placed: false,
-      clicked: false,
-    },
-    Pam: {
-      placed: false,
-      clicked: false,
-    },
-    Robert: {
-      placed: false,
-      clicked: false,
-    },
-    Angela: {
-      placed: false,
-      clicked: false,
-    },
-    Erin: {
-      placed: false,
-      clicked: false,
-    },
-    Kevin: {
-      placed: false,
-      clicked: false,
-    },
-    Gabe: {
-      placed: false,
-      clicked: false,
-    },
-    Toby: {
-      placed: false,
-      clicked: false,
-    },
-    Stanley: {
-      placed: false,
-      clicked: false,
-    },
-    Ryan: {
-      placed: false,
-      clicked: false,
-    }
-  });
-  */
 
 
   let choices = ['Dwight', 'Michael', 'Jim', 'Pam', 'Robert',
@@ -84,11 +30,12 @@ const GameContainer = () => {
 
   const changeCounter = (e) => {
     setCounter(counter + 1);
-    if (clicked.includes(e.target.innerText)) {
+    console.log(e.target.id)
+    if (clicked.includes(e.target.id)) {
       changeScore(0);
     } else {
       changeScore(1);
-      setClicked(clicked => [...clicked, e.target.innerText]);
+      setClicked(clicked => [...clicked, e.target.id]);
     }
 
   }
@@ -119,18 +66,18 @@ const GameContainer = () => {
       <div id="scoreBoard">Score: {score}</div>
       <div id="highScore">High Score: {highScore}</div>
       <div className="cardCont">
-        <div className="card" onClick={changeCounter}>{charArray[0]}</div>
-        <div className="card" onClick={changeCounter}>{charArray[1]}</div>
-        <div className="card" onClick={changeCounter}>{charArray[2]}</div>
-        <div className="card" onClick={changeCounter}>{charArray[3]}</div>
-        <div className="card" onClick={changeCounter}>{charArray[4]}</div>
-        <div className="card" onClick={changeCounter}>{charArray[5]}</div>
-        <div className="card" onClick={changeCounter}>{charArray[6]}</div>
-        <div className="card" onClick={changeCounter}>{charArray[7]}</div>
-        <div className="card" onClick={changeCounter}>{charArray[8]}</div>
-        <div className="card" onClick={changeCounter}>{charArray[9]}</div>
-        <div className="card" onClick={changeCounter}>{charArray[10]}</div>
-        <div className="card" onClick={changeCounter}>{charArray[11]}</div>
+        <div className="card" onClick={changeCounter}>{<PlaceCard names={charArray} position={0}/>}</div>
+        <div className="card" onClick={changeCounter}>{<PlaceCard names={charArray} position={1}/>}</div>
+        <div className="card" onClick={changeCounter}>{<PlaceCard names={charArray} position={2}/>}</div>
+        <div className="card" onClick={changeCounter}>{<PlaceCard names={charArray} position={3}/>}</div>
+        <div className="card" onClick={changeCounter}>{<PlaceCard names={charArray} position={4}/>}</div>
+        <div className="card" onClick={changeCounter}>{<PlaceCard names={charArray} position={5}/>}</div>
+        <div className="card" onClick={changeCounter}>{<PlaceCard names={charArray} position={6}/>}</div>
+        <div className="card" onClick={changeCounter}>{<PlaceCard names={charArray} position={7}/>}</div>
+        <div className="card" onClick={changeCounter}>{<PlaceCard names={charArray} position={8}/>}</div>
+        <div className="card" onClick={changeCounter}>{<PlaceCard names={charArray} position={9}/>}</div>
+        <div className="card" onClick={changeCounter}>{<PlaceCard names={charArray} position={10}/>}</div>
+        <div className="card" onClick={changeCounter}>{<PlaceCard names={charArray} position={11}/>}</div>
       </div>
     </div>
   )
