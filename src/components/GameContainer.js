@@ -1,6 +1,5 @@
 import React, {useState, useEffect } from 'react';
 import PlaceCard from './PlaceCard';
-import '../styles/App.css';
 
 const GameContainer = () => {
   const [counter, setCounter] = useState(0);
